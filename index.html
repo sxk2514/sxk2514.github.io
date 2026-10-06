@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam Kumar — Robotics &amp; Reinforcement Learning</title>
+  <meta name="description"
+    content="Shivam Kumar — PhD student at Case Western Reserve University. Research in reinforcement learning, humanoid whole-body control, shared autonomy and bio-inspired robots." />
+  <meta name="author" content="Shivam Kumar" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shivam Kumar — Robotics &amp; Reinforcement Learning" />
+  <meta property="og:description"
+    content="Robotics researcher working on reinforcement learning for humanoid whole-body control, shared autonomy and bio-inspired robots." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="#top">SK</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">
+        <span aria-hidden="true" data-theme-icon>☾</span>
+      </button>
+      <button class="nav__burger" id="navBurger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ───────────────────────── Hero ───────────────────────── -->
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow">PhD Student &middot; Robotics &amp; Cyber-Physical Systems</p>
+          <h1 class="hero__name">Shivam Kumar</h1>
+          <p class="hero__tagline">
+            I build <strong>reinforcement learning</strong> controllers for robots that touch the
+            real world — humanoids, quadrupeds, underwater vehicles and teleoperated systems.
+          </p>
+          <ul class="hero__facts">
+            <li><span>📍</span> Cleveland, USA</li>
+            <li><span>🎓</span> PhD Student, Case Western Reserve University</li>
+            <li><span>🔬</span> Advised by Dr. Zachary Patterson</li>
+          </ul>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#experience">View my work</a>
+            <a class="btn" href="mailto:sxk2514@case.edu.in">Get in touch</a>
+          </div>
+          <div class="hero__social">
+            <a href="https://www.linkedin.com/in/shivam-kumar-149976155/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:sxk2514@case.edu.in">Email</a>
+            <a href="tel:+12163032836">+1 216-303-2836</a>
+          </div>
+        </div>
+
+        <div class="hero__card" aria-hidden="true">
+          <div class="hero__card-head">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--amber"></span>
+            <span class="dot dot--green"></span>
+            <span class="hero__card-title">policy.py</span>
+          </div>
+          <pre class="hero__code"><code><span class="c"># whole-body, contact-rich humanoid control</span>
+<span class="k">import</span> mujoco.mjx <span class="k">as</span> mjx
+
+<span class="k">class</span> <span class="t">WholeBodyPolicy</span>:
+    robot   = <span class="s">"Unitree G1"</span>
+    sim     = <span class="s">"MuJoCo MJX"</span>
+    method  = <span class="s">"reinforcement learning"</span>
+
+    <span class="k">def</span> <span class="f">act</span>(self, obs):
+        <span class="k">return</span> self.net(obs)   <span class="c"># sim2real</span>
+</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── About ───────────────────────── -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <h2 class="section__title"><span class="section__num">01</span> About</h2>
+        <div class="about">
+          <div class="about__body">
+            <p>
+              I am a <strong>PhD student at Case Western Reserve University</strong>, advised by
+              Dr. Zachary Patterson, after completing my B.Tech. in Robotics and Cyber-Physical
+              Systems at Plaksha University. My work sits at the intersection of
+              <em>learning-based control</em> and <em>physical embodiment</em>: taking policies from
+              simulation and making them survive contact, delay and noise on real hardware.
+            </p>
+            <p>
+              Across six research positions I have worked on humanoid whole-body control,
+              time-delayed shared autonomy, soft robotic grippers, unmanned surface vehicles,
+              bio-inspired underwater robots and visual localisation — from the PCB up to the policy.
+            </p>
+          </div>
+          <dl class="about__stats">
+            <div><dt>B.Tech. CGPA</dt><dd>8.41<span>/10</span></dd></div>
+            <div><dt>Research positions</dt><dd>6</dd></div>
+            <div><dt>Workshop papers</dt><dd>1</dd></div>
+            <div><dt>Gold medals</dt><dd>2</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Experience ───────────────────────── -->
+    <section class="section section--alt" id="experience">
+      <div class="wrap">
+        <h2 class="section__title"><span class="section__num">02</span> Experience</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__date">Jul 2025 — Present</span>
+              <span class="badge badge--live">Current</span>
+            </div>
+            <h3 class="timeline__role">PhD Student</h3>
+            <p class="timeline__org">Case Western Reserve University &middot; Cleveland, USA</p>
+            <p class="timeline__advisor">Advisor: Dr. Zachary Patterson</p>
+            <ul class="bullets">
+              <li>Developing reinforcement learning–based control algorithms for whole-body,
+                contact-rich (skin-integrated) control of humanoid robots.</li>
+              <li>Deploying learned policies in MuJoCo-MJX simulation and on real hardware —
+                the Unitree G1 humanoid.</li>
+            </ul>
+            <ul class="tags">
+              <li>Reinforcement Learning</li><li>MuJoCo MJX</li><li>Unitree G1</li><li>Sim-to-Real</li>
+            </ul>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__date">Feb 2025 — Present</span>
+              <span class="badge badge--live">Current</span>
+            </div>
+            <h3 class="timeline__role">Student Intern</h3>
+            <p class="timeline__org">Case Western Reserve University &middot; Cleveland, USA</p>
+            <p class="timeline__advisor">Advisor: Dr. Zonghe Chua</p>
+            <ul class="bullets">
+              <li>Built a 2D nonlinear path-following simulation for teleoperated robotic control
+                under a time-delayed shared-autonomy paradigm.</li>
+              <li>Designed and tested a Koopman-operator-based model for the simulator.</li>
+              <li>Parameterised the human operator model and trained it with a transformer-based
+                architecture; an RL algorithm then provides task assistance plus a coach-based
+                system that brings users to proficiency after a warm-up phase.</li>
+            </ul>
+            <ul class="tags">
+              <li>Shared Autonomy</li><li>Koopman Operator</li><li>Transformers</li><li>Teleoperation</li>
+            </ul>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__date">Jun 2024 — Aug 2024</span>
+            </div>
+            <h3 class="timeline__role">Project Intern</h3>
+            <p class="timeline__org">TCS Research &middot; Noida, India</p>
+            <p class="timeline__advisor">Advisor: Prakash Ambwani</p>
+            <ul class="bullets">
+              <li>Ran a comprehensive literature survey and reviewed a soft robotic gripper for
+                “Perception and Language-Guided Robotic Manipulation” on a Universal Robots manipulator.</li>
+              <li>Developed an independent control system for the RG2 robotic gripper using Arduino.</li>
+            </ul>
+            <ul class="tags">
+              <li>Soft Robotics</li><li>Manipulation</li><li>Arduino</li><li>Universal Robots</li>
+            </ul>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__date">Jul 2023 — Aug 2023</span>
+            </div>
+            <h3 class="timeline__role">Robotics Research Intern</h3>
+            <p class="timeline__org">Singapore University of Technology and Design &middot; Singapore</p>
+            <p class="timeline__advisor">Advisor: Dr. Malika Meghjani</p>
+            <ul class="bullets">
+              <li>Fixed and upgraded ROS for two generations of Unmanned Surface Vehicles (USVs)
+                and sensor buoys used for continuous data collection.</li>
+              <li>Performed hardware repairs and wired onboard sensors — GPS, Battery Management
+                Unit and XBee radio links.</li>
+              <li>Maintained two buoy versions running on BeagleBone and ODROID boards.</li>
+              <li>Implemented straight-line and circular trajectory tracking on USVs with a PID controller.</li>
+            </ul>
+            <ul class="tags">
+              <li>ROS</li><li>USV</li><li>PID Control</li><li>Embedded Systems</li>
+            </ul>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__date">Jul 2022 — Aug 2022</span>
+            </div>
+            <h3 class="timeline__role">Computer Vision Research Intern</h3>
+            <p class="timeline__org">Plaksha University &middot; Mohali, India</p>
+            <p class="timeline__advisor">Advisor: Dr. Shashank Tamaskar</p>
+            <ul class="bullets">
+              <li>Designed an advanced localisation algorithm for reliable autonomous navigation
+                of mobile robots.</li>
+              <li>Fused ArUco marker detection with IMU and odometry to reach centimetre-level
+                pose estimation accuracy.</li>
+              <li>Ran extensive real-world testing across lighting and environment conditions to
+                assess robustness and reduce localisation drift.</li>
+            </ul>
+            <ul class="tags">
+              <li>Computer Vision</li><li>Sensor Fusion</li><li>ArUco</li><li>Localisation</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Projects ───────────────────────── -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <h2 class="section__title"><span class="section__num">03</span> Projects</h2>
+
+        <div class="grid">
+          <article class="card">
+            <header class="card__head">
+              <h3>Mini Pupper — Quadruped</h3>
+              <span class="card__date">Jan 2024 — Present</span>
+            </header>
+            <p>Bio-inspired quadrupedal robot engineered and fabricated for mechanical realism and
+              dynamic stability, with sim-to-real transfer in ROS and Gazebo.</p>
+            <ul class="bullets bullets--tight">
+              <li>Control framework in ROS for walking, turning and dynamic actions such as push-ups.</li>
+              <li>Sim-to-real transfer validated on hardware.</li>
+            </ul>
+            <ul class="tags"><li>ROS</li><li>Gazebo</li><li>Sim-to-Real</li></ul>
+            <a class="card__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub repository →</a>
+          </article>
+
+          <article class="card">
+            <header class="card__head">
+              <h3>Underactuated Robotic Fish</h3>
+              <span class="card__date">Jan 2024 — Present</span>
+            </header>
+            <p>Energy-efficient underactuated robotic fish studied in OpenAI FishGym, analysing how
+              action-space design affects learned swimming behaviour.</p>
+            <ul class="bullets bullets--tight">
+              <li>RL algorithms applied to cruising, path following and pose control.</li>
+              <li>Comparative study of action spaces across tasks.</li>
+            </ul>
+            <ul class="tags"><li>Reinforcement Learning</li><li>FishGym</li><li>Bio-inspired</li></ul>
+          </article>
+
+          <article class="card">
+            <header class="card__head">
+              <h3>Field Boundary Detection</h3>
+              <span class="card__date">Aug 2023 — Dec 2023</span>
+            </header>
+            <p>Deep learning pipeline delineating agricultural field boundaries from multispectral
+              temporal satellite data.</p>
+            <ul class="bullets bullets--tight">
+              <li>U-Net, Res-U-Net and SAM architectures benchmarked.</li>
+              <li>Precision improved with Z-scoring and spatial-temporal mixing.</li>
+            </ul>
+            <ul class="tags"><li>Deep Learning</li><li>U-Net</li><li>SAM</li><li>Remote Sensing</li></ul>
+          </article>
+
+          <article class="card">
+            <header class="card__head">
+              <h3>Self-Balancing Bot</h3>
+              <span class="card__date">Mar 2023 — May 2023</span>
+            </header>
+            <p>Self-stabilising two-wheeled robot built end to end: structural frame, electronics
+              and a tuned PID control loop.</p>
+            <ul class="bullets bullets--tight">
+              <li>IMU, Arduino, CNC shield and stepper motors.</li>
+            </ul>
+            <ul class="tags"><li>PID Control</li><li>IMU</li><li>Arduino</li></ul>
+            <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">Watch the demo →</a>
+          </article>
+
+          <article class="card">
+            <header class="card__head">
+              <h3>Grid-based Localisation</h3>
+              <span class="card__date">Aug 2023 — Dec 2023</span>
+            </header>
+            <p>Probabilistic localisation system using a Bayes filter over a 5×5 occupancy grid,
+              deployed on a mobile robot.</p>
+            <ul class="tags"><li>Bayes Filter</li><li>Probabilistic Robotics</li><li>Python</li></ul>
+            <a class="card__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub repository →</a>
+          </article>
+
+          <article class="card">
+            <header class="card__head">
+              <h3>WINDEGY — Vertical Axis Wind Turbines</h3>
+              <span class="card__date">Jul 2022 — May 2023</span>
+            </header>
+            <p>Led design and fabrication of three prototype iterations of vertical-axis wind
+              turbines, plus the test facility to characterise them.</p>
+            <ul class="bullets bullets--tight">
+              <li>Wind testing facility delivering controlled speeds up to 10 m/s.</li>
+              <li>Tested the hypothesis that three co-located VAWTs raise total power output.</li>
+              <li>Engineered an anemoscope and rotary system for self-orientation.</li>
+            </ul>
+            <ul class="tags"><li>Clean Energy</li><li>Design &amp; Fabrication</li><li>Testing</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Publications ───────────────────────── -->
+    <section class="section section--alt" id="publications">
+      <div class="wrap">
+        <h2 class="section__title"><span class="section__num">04</span> Publications</h2>
+        <article class="pub">
+          <h3 class="pub__title">Underactuated Biomimetic Autonomous Underwater Vehicle for Ecosystem Monitoring</h3>
+          <p class="pub__venue">
+            IEEE International Conference on Robotics and Automation (ICRA) 2024 —
+            <em>Robots for Understanding Natural Ecosystems (RUNE)</em> Workshop &middot; Accepted
+          </p>
+          <p class="pub__note">
+            Co-authored workshop proposal paper. Presented in Japan by Prof. Sandeep Manjanna,
+            Assistant Professor at Plaksha University.
+          </p>
+          <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">Read the paper →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Awards ───────────────────────── -->
+    <section class="section" id="awards">
+      <div class="wrap">
+        <h2 class="section__title"><span class="section__num">05</span> Awards</h2>
+        <ul class="awards">
+          <li>
+            <span class="awards__icon" aria-hidden="true">🥇</span>
+            <div>
+              <h3>S.P. Dutt Award for Innovation and Impact in Clean Energy</h3>
+              <p>Gold Medallist. Received ₹1 Lakh INR in funding to continue the project.</p>
+            </div>
+          </li>
+          <li>
+            <span class="awards__icon" aria-hidden="true">🥇</span>
+            <div>
+              <h3>Plaksha Summer Entrepreneurship Program</h3>
+              <p>Gold Medallist for developing a commercially viable product. Received ₹25K INR in funding.</p>
+            </div>
+          </li>
+          <li>
+            <span class="awards__icon" aria-hidden="true">🎓</span>
+            <div>
+              <h3>Bharti Scholarship</h3>
+              <p>Covering 100% of tuition fees and living expenses.</p>
+            </div>
+          </li>
+          <li>
+            <span class="awards__icon" aria-hidden="true">🎓</span>
+            <div>
+              <h3>Shiv Nadar Foundation Scholarship</h3>
+              <p>Covering full education costs for grades 6–12.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Skills ───────────────────────── -->
+    <section class="section section--alt" id="skills">
+      <div class="wrap">
+        <h2 class="section__title"><span class="section__num">06</span> Skills &amp; Coursework</h2>
+
+        <div class="skills">
+          <div class="skills__group">
+            <h3>Programming &amp; Simulation</h3>
+            <ul class="tags tags--lg">
+              <li>Python</li><li>C++</li><li>Embedded C</li><li>MATLAB</li>
+              <li>MuJoCo</li><li>ROS</li><li>Gazebo</li><li>Arduino</li><li>Zephyr RTOS</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3>Electronics &amp; Lab Work</h3>
+            <ul class="tags tags--lg">
+              <li>Raspbian Systems</li><li>ESP32</li><li>BeagleBone</li><li>ODROID</li>
+              <li>PCB Design</li><li>Rapid Prototyping</li><li>Hardware Testing</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3>Relevant Coursework</h3>
+            <ul class="tags tags--lg">
+              <li>Deep Learning</li><li>Reinforcement Learning</li><li>Control</li>
+              <li>Autonomy, Planning &amp; Navigation</li><li>System Dynamics &amp; Controls</li>
+              <li>Sensing &amp; Actuation</li><li>Optimization</li>
+              <li>Machine Learning &amp; Pattern Recognition</li>
+              <li>Search Methods in AI</li><li>Fluids in Action</li><li>Embedded Systems</li>
+              <li>Foundations of Computer Systems</li><li>Connected Systems &amp; IoT</li>
+              <li>Engineering Mechanics</li><li>Signals &amp; Systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Contact ───────────────────────── -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact__inner">
+        <h2 class="section__title"><span class="section__num">07</span> Get in touch</h2>
+        <p class="contact__lead">
+          I am always happy to talk about reinforcement learning for real robots, shared autonomy,
+          or research and graduate opportunities.
+        </p>
+        <div class="contact__links">
+          <a class="btn btn--primary" href="mailto:sxk2514@case.edu.in">sxk2514@case.edu.in</a>
+          <a class="btn" href="https://www.linkedin.com/in/shivam-kumar-149976155/" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn" href="tel:+12163032836">+1 216-303-2836</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year">2026</span> Shivam Kumar</p>
+      <p>Built with plain HTML, CSS and JavaScript. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
