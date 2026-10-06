@@ -389,16 +389,13 @@ ol {
 }
 
 /* About */
-.about {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: start;
+.about__body {
+  max-width: 68ch;
 }
 
 .about__body p {
   color: var(--text-dim);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
 }
 
 .about__body strong {
@@ -408,42 +405,6 @@ ol {
 .about__body em {
   color: var(--accent);
   font-style: normal;
-}
-
-.about__stats {
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-}
-
-.about__stats div {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.1rem 1rem;
-}
-
-.about__stats dt {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-faint);
-  margin-bottom: 0.35rem;
-}
-
-.about__stats dd {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--accent);
-  font-family: var(--mono);
-}
-
-.about__stats dd span {
-  font-size: 0.95rem;
-  color: var(--text-faint);
-  font-weight: 400;
 }
 
 /* ============================================================
@@ -775,8 +736,7 @@ ol {
    Responsive
    ============================================================ */
 @media (max-width: 900px) {
-  .hero__inner,
-  .about {
+  .hero__inner {
     grid-template-columns: 1fr;
   }
 
@@ -811,10 +771,6 @@ ol {
 
   .theme-toggle {
     margin-left: auto;
-  }
-
-  .about__stats {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
