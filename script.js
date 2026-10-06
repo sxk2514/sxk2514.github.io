@@ -53,7 +53,7 @@
 
   /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll(
-    ".section__title, .about, .timeline__item, .card, .pub, .awards li, .skills__group, .contact__lead, .contact__links"
+    ".section__title, .about, .timeline__item, .card, .pub, .awards li, .contact__lead, .contact__links"
   );
   revealTargets.forEach((el) => el.classList.add("reveal"));
 
