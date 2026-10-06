@@ -242,15 +242,6 @@ ol {
   align-items: center;
 }
 
-.hero__eyebrow {
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.9rem;
-}
-
 .hero__name {
   font-size: clamp(2.3rem, 5vw, 3.8rem);
   font-weight: 700;
@@ -343,79 +334,31 @@ ol {
   text-decoration: none;
 }
 
-/* Code card */
-.hero__card {
-  background: var(--surface);
+/* Headshot */
+.hero__photo {
+  justify-self: center;
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+}
+
+.hero__photo::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+  pointer-events: none;
 }
 
-.hero__card-head {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: var(--surface-2);
-  border-bottom: 1px solid var(--border);
-}
-
-.dot {
-  width: 11px;
-  height: 11px;
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
   display: block;
-}
-
-.dot--red {
-  background: #ff5f57;
-}
-
-.dot--amber {
-  background: #febc2e;
-}
-
-.dot--green {
-  background: #28c840;
-}
-
-.hero__card-title {
-  margin-left: 0.5rem;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--text-faint);
-}
-
-.hero__code {
-  margin: 0;
-  padding: 1.25rem 1.4rem 1.6rem;
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  line-height: 1.75;
-  color: var(--text-dim);
-  overflow-x: auto;
-}
-
-.hero__code .k {
-  color: var(--accent-2);
-}
-
-.hero__code .t {
-  color: #ffb86c;
-}
-
-.hero__code .f {
-  color: var(--accent);
-}
-
-.hero__code .s {
-  color: #f1a7c8;
-}
-
-.hero__code .c {
-  color: var(--text-faint);
-  font-style: italic;
+  border: 3px solid var(--surface);
+  box-shadow: var(--shadow);
 }
 
 /* ============================================================
@@ -837,8 +780,9 @@ ol {
     grid-template-columns: 1fr;
   }
 
-  .hero__card {
+  .hero__photo {
     order: -1;
+    width: min(100%, 240px);
   }
 }
 
